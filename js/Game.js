@@ -20,14 +20,14 @@
 
             SCENE = 'game',
 
-            TITLE_TEXT = "FLAPPY BIRD",
+            TITLE_TEXT = "Kayaking With Rach",
             INSTRUCTIONS_TEXT = "TOUCH\nTO\nFLY",
 
             HIGHSCORE_TITLE = "HIGHSCORES",
             HIGHSCORE_SUBMIT = "POST SCORE",
 
-            DEVELOPER_COPYRIGHT_TEXT = "Developer\nEugene Obrezkov\nghaiklor@gmail.com",
-            GRAPHIC_COPYRIGHT_TEXT = "Graphic\nDmitry Lezhenko\ndima.lezhenko@gmail.com",
+            DEVELOPER_COPYRIGHT_TEXT = "Happy Birthday!,
+            GRAPHIC_COPYRIGHT_TEXT = "Forked from nEugene Obrezkov,
             LOADING_TEXT = "LOADING...",
             CANVAS_WIDTH = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth,
             CANVAS_HEIGHT = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
