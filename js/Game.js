@@ -26,8 +26,8 @@
             HIGHSCORE_TITLE = "HIGHSCORES",
             HIGHSCORE_SUBMIT = "POST SCORE",
 
-            DEVELOPER_COPYRIGHT_TEXT = "Happy Birthday, Rach. ",
-            GRAPHIC_COPYRIGHT_TEXT = "Dont hit the rocks. ",
+            DEVELOPER_COPYRIGHT_TEXT = "Happy Birthday Rach. ",
+            GRAPHIC_COPYRIGHT_TEXT = "Dont hit the rocks ",
             LOADING_TEXT = "LOADING...",
             CANVAS_WIDTH = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth,
             CANVAS_HEIGHT = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
