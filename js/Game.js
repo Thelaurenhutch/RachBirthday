@@ -20,14 +20,14 @@
 
             SCENE = 'game',
 
-            TITLE_TEXT = "Kayaking With Rach",
+            TITLE_TEXT = "FLAPPY BIRD",
             INSTRUCTIONS_TEXT = "TOUCH\nTO\nFLY",
 
             HIGHSCORE_TITLE = "HIGHSCORES",
             HIGHSCORE_SUBMIT = "POST SCORE",
 
-            DEVELOPER_COPYRIGHT_TEXT = "Happy Birthday!,
-            GRAPHIC_COPYRIGHT_TEXT = "Forked from nEugene Obrezkov,
+            DEVELOPER_COPYRIGHT_TEXT = "Happy Birthday, Rach. ",
+            GRAPHIC_COPYRIGHT_TEXT = "Dont hit the rocks. ",
             LOADING_TEXT = "LOADING...",
             CANVAS_WIDTH = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth,
             CANVAS_HEIGHT = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
@@ -267,9 +267,6 @@
         ///////////////////
         var birdFlap = function birdFlap() {
             Bird.body.velocity.y = -BIRD_FLAP;
-            if (isSoundEnabled) {
-                FlapSound.play();
-            }
         };
 
         ////////////////////////////////////
@@ -394,7 +391,7 @@
                 cloudX = typeof cloudX == 'undefined' ? Game.world.width : cloudX;
                 startTimer = typeof startTimer == 'undefined' ? true : false;
 
-                var cloudY = Math.random() * Game.world.height ,
+                var cloudY = Math.random() * Game.world.height / 1,
                     cloud = Clouds.create(cloudX, cloudY, 'clouds', Math.floor(21 * Math.random())),
                     cloudScale = 1 + Math.floor((4 * Math.random()));
 
@@ -424,6 +421,25 @@
             CloudsTimer = Game.time.create(false);
             CloudsTimer.add(0, makeNewCloud, this);
             CloudsTimer.start();
+        };
+
+        /////////////////
+        //Create Fence //
+        /////////////////
+        var createTown = function createTown() {
+            Town = Game.add.tileSprite(0, Game.world.height - 128, Game.world.width, 128, 'town');
+        };
+
+        ////////////////
+        //Create bird //
+        ////////////////
+        var createBird = function createBird() {
+            Bird = Game.add.sprite(0, 0, 'bird');
+            Bird.anchor.setTo(0.5, 0.5);
+            Bird.scale.setTo(2, 2); // Adjust the scale to make the bird bigger (2x its original size)
+            Bird.body.collideWorldBounds = true;
+            Bird.body.gravity.y = 0;
+            Bird.body.allowGravity = false;
         };
 
 
@@ -487,6 +503,24 @@
                 align: 'center'
             });
             TitleText.anchor.setTo(0.5, 0.5);
+
+            DeveloperCopyrightText = Game.add.text(Game.world.width - 20, Game.world.height - 20, DEVELOPER_COPYRIGHT_TEXT, {
+                font: '11px "Press Start 2P"',
+                fill: '#423B30',
+                stroke: '#FFFFFF',
+                strokeThickness: 1,
+                align: 'center'
+            });
+            DeveloperCopyrightText.anchor.setTo(1, 1);
+
+            GraphicCopyrightText = Game.add.text(20, Game.world.height - 20, GRAPHIC_COPYRIGHT_TEXT, {
+                font: '11px "Press Start 2P"',
+                fill: '#423B30',
+                stroke: '#FFFFFF',
+                strokeThickness: 1,
+                align: 'center'
+            });
+            GraphicCopyrightText.anchor.setTo(0, 1);
 
             InstructionsText = Game.add.text(Game.world.width / 2, Game.world.height - Game.world.height / 6, INSTRUCTIONS_TEXT, {
                 font: '16px "Press Start 2P"',
